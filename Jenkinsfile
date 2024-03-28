@@ -38,7 +38,7 @@ pipeline {
                 }
             }
         }
-        stage('canaryDeploy')
+        stage('canaryDeploy'){
             when {
                 branch 'master'
             }
@@ -54,6 +54,7 @@ pipeline {
                     enableConfigSubstitution: true
                 )
             }
+        } 
         stage('DeployToProduction') {
             when {
                 branch 'master'
